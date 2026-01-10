@@ -1,0 +1,5 @@
+export { default as WisataHero } from './WisataHero'
+export { default as WisataInfo } from './WisataInfo'
+export { default as WisataGallery } from './WisataGallery'
+export { default as WisataFacilities } from './WisataFacilities'
+export { default as WisataSidebar } from './WisataSidebar'

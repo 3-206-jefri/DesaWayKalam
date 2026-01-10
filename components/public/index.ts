@@ -1,0 +1,6 @@
+export { default as Navbar } from './Navbar'
+export { default as HeroSection } from './HeroSection'
+export { default as AboutSection } from './AboutSection'
+export { default as GallerySection } from './GallerySection'
+export { default as TeamSection } from './TeamSection'
+export { default as Footer } from './Footer'

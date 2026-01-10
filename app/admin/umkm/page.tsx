@@ -1,18 +1,17 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Plus, Search, Edit, Trash2, X, Upload, Star } from 'lucide-react'
 import Image from 'next/image'
 import { Product } from '@/lib/validations/umkm'
 import { formatCurrency, formatWhatsApp } from '@/lib/utils/format'
 import RatingInput from '@/components/admin/rating-input'
 import { ToastProvider, useToast } from '@/lib/hooks/use-toast'
-
-// Mock data for demonstration
-const mockProducts: Product[] = []
+import { createClient } from '@/lib/supabase/client'
 
 function UMKMContent() {
-  const [products, setProducts] = useState<Product[]>(mockProducts)
+  const [products, setProducts] = useState<Product[]>([])
+  const [loading, setLoading] = useState(true)
   const [searchQuery, setSearchQuery] = useState('')
   const [categoryFilter, setCategoryFilter] = useState<string>('all')
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -20,6 +19,28 @@ function UMKMContent() {
   const [deleteConfirm, setDeleteConfirm] = useState<string | null>(null)
   
   const { success, error } = useToast()
+  const supabase = createClient()
+
+  // Fetch products from Supabase
+  useEffect(() => {
+    fetchProducts()
+  }, [])
+
+  const fetchProducts = async () => {
+    setLoading(true)
+    const { data, error: fetchError } = await supabase
+      .from('products')
+      .select('*')
+      .order('createdAt', { ascending: false })
+
+    if (fetchError) {
+      console.error('Error fetching products:', fetchError)
+      error('Gagal memuat produk')
+    } else {
+      setProducts(data || [])
+    }
+    setLoading(false)
+  }
 
   // Form state
   const [formData, setFormData] = useState({
@@ -81,7 +102,7 @@ function UMKMContent() {
     }
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
 
     // Validation
@@ -95,34 +116,62 @@ function UMKMContent() {
       return
     }
 
-    const productData: Product = {
-      id: editingProduct?.id || Math.random().toString(36).substr(2, 9),
+    const productData = {
       name: formData.name,
-      description: formData.description,
+      description: formData.description || null,
       category: formData.category,
       price: parseFloat(formData.price.replace(/[^0-9]/g, '')),
       whatsapp: formData.whatsapp,
       rating: formData.rating,
-      image: imagePreview,
-      createdAt: editingProduct?.createdAt || new Date(),
-      updatedAt: new Date(),
+      image: imagePreview || null,
     }
 
     if (editingProduct) {
-      setProducts(products.map(p => p.id === editingProduct.id ? productData : p))
+      // Update product
+      const { error: updateError } = await supabase
+        .from('products')
+        .update({ ...productData, updatedAt: new Date().toISOString() })
+        .eq('id', editingProduct.id)
+
+      if (updateError) {
+        console.error('Error updating product:', updateError)
+        error('Gagal mengupdate produk')
+        return
+      }
       success('Produk berhasil diupdate!')
     } else {
-      setProducts([...products, productData])
+      // Create new product
+      const { error: insertError } = await supabase
+        .from('products')
+        .insert([productData])
+
+      if (insertError) {
+        console.error('Error creating product:', insertError)
+        error('Gagal menambahkan produk')
+        return
+      }
       success('Produk berhasil ditambahkan!')
     }
 
     setIsModalOpen(false)
+    fetchProducts() // Refresh products list
   }
 
-  const handleDelete = (id: string) => {
-    setProducts(products.filter(p => p.id !== id))
+  const handleDelete = async (id: string) => {
+    const { error: deleteError } = await supabase
+      .from('products')
+      .delete()
+      .eq('id', id)
+
+    if (deleteError) {
+      console.error('Error deleting product:', deleteError)
+      error('Gagal menghapus produk')
+      return
+    }
+
     setDeleteConfirm(null)
     success('Produk berhasil dihapus!')
+    fetchProducts() // Refresh products list
   }
 
   return (
