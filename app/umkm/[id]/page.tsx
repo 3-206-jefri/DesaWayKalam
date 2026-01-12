@@ -1,12 +1,12 @@
 import { createClient } from "@/lib/supabase/server"
 import { notFound } from "next/navigation"
-import { ProductDetailHero, ProductInfo } from "@/components/umkm"
+import { ProductDetailHero } from "@/components/umkm"
 import Footer from "@/components/public/Footer"
 
 interface PageProps {
-  params: {
-    slug: string
-  }
+  params: Promise<{
+    id: string
+  }>
 }
 
 // Map database categories to display categories
@@ -17,35 +17,55 @@ const categoryMap: Record<string, string> = {
   "Lainnya": "Kerajinan"
 }
 
+function stableModFromString(input: string, mod: number) {
+  let hash = 0
+  for (let i = 0; i < input.length; i++) {
+    hash = (hash * 31 + input.charCodeAt(i)) >>> 0
+  }
+  return mod === 0 ? 0 : hash % mod
+}
+
 export default async function ProductDetailPage({ params }: PageProps) {
+  const { id } = await params
   const supabase = await createClient()
   
   // Fetch product from Supabase by ID
   const { data: product, error } = await supabase
-    .from('products')
+    .from('umkm_products')
     .select('*')
-    .eq('id', params.slug)
+    .eq('id', id)
+    .eq('is_active', true)
     .single()
 
   if (error || !product) {
     notFound()
   }
 
+  const sanitizeImageSrc = (value: unknown) => {
+    if (typeof value !== 'string') return undefined
+    const trimmed = value.trim().replace(/^['"]|['"]$/g, '')
+    if (!trimmed) return undefined
+    if (trimmed.startsWith('blob:')) return undefined
+    const isValid =
+      trimmed.startsWith('/') ||
+      trimmed.startsWith('http://') ||
+      trimmed.startsWith('https://') ||
+      trimmed.startsWith('data:image/')
+    return isValid ? trimmed : undefined
+  }
+
   // Calculate review count based on rating (mock)
-  const reviewCount = Math.floor(product.rating * 20) + Math.floor(Math.random() * 50)
+  const reviewCount = Math.floor(product.rating * 20) + stableModFromString(String(product.id), 50)
 
   return (
     <div className="min-h-screen bg-white">
       <ProductDetailHero
-        image={product.image || "/uploaded_image_0_1768037972713.png"}
+        image={sanitizeImageSrc(product.photo_url) || "/uploaded_image_0_1768037972713.png"}
         category={categoryMap[product.category] || product.category}
         name={product.name}
         rating={product.rating}
         reviewCount={reviewCount}
         price={`Rp ${product.price.toLocaleString('id-ID')}`}
-      />
-
-      <ProductInfo
         description={product.description || "Produk berkualitas dari UMKM lokal desa kami."}
         sellerName={`Penjual ${product.name.split(' ')[0]}`}
         sellerType="Penjual Terpercaya"
@@ -58,12 +78,14 @@ export default async function ProductDetailPage({ params }: PageProps) {
 }
 
 export async function generateMetadata({ params }: PageProps) {
+  const { id } = await params
   const supabase = await createClient()
   
   const { data: product } = await supabase
-    .from('products')
+    .from('umkm_products')
     .select('name, description')
-    .eq('id', params.slug)
+    .eq('id', id)
+    .eq('is_active', true)
     .single()
 
   if (!product) {

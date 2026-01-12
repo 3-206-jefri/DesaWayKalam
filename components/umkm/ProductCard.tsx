@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { MessageCircle } from "lucide-react"
+import { Image as ImageIcon, MessageCircle } from "lucide-react"
 import StarRating from "./StarRating"
 
 interface ProductCardProps {
@@ -12,7 +12,6 @@ interface ProductCardProps {
   description: string
   price: string
   rating: number
-  reviewCount: number
   whatsappNumber: string
 }
 
@@ -23,9 +22,17 @@ export default function ProductCard({
   description,
   price,
   rating,
-  reviewCount,
   whatsappNumber
 }: ProductCardProps) {
+  const normalizedImage = image?.trim()
+  const isValidImageSrc =
+    !!normalizedImage &&
+    (normalizedImage.startsWith("/") ||
+      normalizedImage.startsWith("http://") ||
+      normalizedImage.startsWith("https://") ||
+      normalizedImage.startsWith("data:image/")) &&
+    !normalizedImage.startsWith("blob:")
+
   const handleWhatsAppClick = (e: React.MouseEvent) => {
     e.preventDefault()
     const message = encodeURIComponent(`Halo, saya tertarik dengan produk ${name}`)
@@ -36,17 +43,18 @@ export default function ProductCard({
     <div className="bg-white rounded-xl overflow-hidden border border-slate-200 hover:shadow-lg transition-shadow">
       {/* Product Image */}
       <div className="relative h-64 bg-slate-100">
-        <Image
-          src={image}
-          alt={name}
-          fill
-          className="object-cover"
-        />
+        {isValidImageSrc ? (
+          <Image src={normalizedImage} alt={name} fill className="object-cover" />
+        ) : (
+          <div className="absolute inset-0 flex items-center justify-center text-slate-400">
+            <ImageIcon className="w-10 h-10" />
+          </div>
+        )}
       </div>
 
       {/* Product Info */}
       <div className="p-4">
-        <StarRating rating={rating} reviewCount={reviewCount} size="sm" />
+        <StarRating rating={rating} size="sm" showValue={false} showCount={false} />
         
         <h3 className="font-bold text-slate-900 mt-2 mb-1 line-clamp-1">{name}</h3>
         <p className="text-sm text-slate-600 mb-3 line-clamp-2">{description}</p>

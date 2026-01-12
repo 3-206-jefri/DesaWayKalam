@@ -21,20 +21,35 @@ export default async function UmkmPage() {
   
   // Fetch products from Supabase
   const { data: products, error } = await supabase
-    .from('products')
+    .from('umkm_products')
     .select('*')
-    .order('createdAt', { ascending: false })
+    .eq('is_active', true)
+    .order('created_at', { ascending: false })
 
   if (error) {
     console.error('Error fetching products:', error.message || error)
   }
 
+  const sanitizeImageSrc = (value: unknown) => {
+    if (typeof value !== 'string') return undefined
+    const trimmed = value.trim().replace(/^['"]|['"]$/g, '')
+    if (!trimmed) return undefined
+    if (trimmed.startsWith('blob:')) return undefined
+    return trimmed
+  }
+
   // Transform products to match our interface
-  const transformedProducts = (products || []).map(product => ({
-    ...product,
+  const transformedProducts = (products || []).map((product) => ({
+    id: String(product.id),
+    name: product.name,
+    description: product.description ?? '',
+    price: Number(product.price),
     category: categoryMap[product.category] || product.category,
-    createdAt: new Date(product.createdAt),
-    updatedAt: new Date(product.updatedAt)
+    rating: Number(product.rating ?? 0),
+    image: sanitizeImageSrc(product.photo_url),
+    whatsapp: product.whatsapp,
+    createdAt: new Date(product.created_at),
+    updatedAt: new Date(product.updated_at),
   }))
 
   // Get unique categories from products

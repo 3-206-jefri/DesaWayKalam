@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback, useMemo } from 'react'
 import { Plus, Search, Edit, Trash2, X, Upload, Star } from 'lucide-react'
 import Image from 'next/image'
 import { Product } from '@/lib/validations/umkm'
@@ -9,9 +9,22 @@ import RatingInput from '@/components/admin/rating-input'
 import { ToastProvider, useToast } from '@/lib/hooks/use-toast'
 import { createClient } from '@/lib/supabase/client'
 
+type UmkmProductRow = {
+  id: string
+  name: string
+  description: string
+  category: 'Makanan' | 'Minuman' | 'Kerajinan' | 'Lainnya'
+  price: number | string
+  whatsapp: string
+  rating: number | string | null
+  photo_url: string | null
+  is_active: boolean
+  created_at: string
+  updated_at: string
+}
+
 function UMKMContent() {
   const [products, setProducts] = useState<Product[]>([])
-  const [loading, setLoading] = useState(true)
   const [searchQuery, setSearchQuery] = useState('')
   const [categoryFilter, setCategoryFilter] = useState<string>('all')
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -19,28 +32,39 @@ function UMKMContent() {
   const [deleteConfirm, setDeleteConfirm] = useState<string | null>(null)
   
   const { success, error } = useToast()
-  const supabase = createClient()
+  const supabase = useMemo(() => createClient(), [])
 
-  // Fetch products from Supabase
-  useEffect(() => {
-    fetchProducts()
-  }, [])
-
-  const fetchProducts = async () => {
-    setLoading(true)
+  const fetchProducts = useCallback(async () => {
     const { data, error: fetchError } = await supabase
-      .from('products')
+      .from('umkm_products')
       .select('*')
-      .order('createdAt', { ascending: false })
+      .order('created_at', { ascending: false })
 
     if (fetchError) {
       console.error('Error fetching products:', fetchError)
       error('Gagal memuat produk')
     } else {
-      setProducts(data || [])
+      const mapped: Product[] = ((data || []) as UmkmProductRow[]).map((row) => ({
+        id: row.id,
+        name: row.name,
+        description: row.description,
+        category: row.category,
+        price: Number(row.price),
+        whatsapp: row.whatsapp,
+        rating: Number(row.rating ?? 0),
+        image: row.photo_url ?? undefined,
+        createdAt: new Date(row.created_at),
+        updatedAt: new Date(row.updated_at),
+      }))
+      setProducts(mapped)
     }
-    setLoading(false)
-  }
+  }, [error, supabase])
+
+  // Fetch products from Supabase
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    fetchProducts()
+  }, [fetchProducts])
 
   // Form state
   const [formData, setFormData] = useState({
@@ -51,8 +75,8 @@ function UMKMContent() {
     whatsapp: '',
     rating: 0,
   })
-  const [imageFile, setImageFile] = useState<File | null>(null)
   const [imagePreview, setImagePreview] = useState<string>('')
+  const [imageFile, setImageFile] = useState<File | null>(null)
 
   // Filter products
   const filteredProducts = products.filter((product) => {
@@ -71,8 +95,8 @@ function UMKMContent() {
       whatsapp: '',
       rating: 0,
     })
-    setImageFile(null)
     setImagePreview('')
+    setImageFile(null)
     setIsModalOpen(true)
   }
 
@@ -87,6 +111,7 @@ function UMKMContent() {
       rating: product.rating,
     })
     setImagePreview(product.image || '')
+    setImageFile(null)
     setIsModalOpen(true)
   }
 
@@ -102,6 +127,14 @@ function UMKMContent() {
     }
   }
 
+  const fileToDataUrl = (file: File) =>
+    new Promise<string>((resolve, reject) => {
+      const reader = new FileReader()
+      reader.onload = () => resolve(String(reader.result))
+      reader.onerror = () => reject(new Error('Failed to read image file'))
+      reader.readAsDataURL(file)
+    })
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
 
@@ -116,21 +149,24 @@ function UMKMContent() {
       return
     }
 
+    const photoUrl = imageFile ? await fileToDataUrl(imageFile) : (imagePreview || null)
+
     const productData = {
       name: formData.name,
-      description: formData.description || null,
+      description: formData.description || '',
       category: formData.category,
       price: parseFloat(formData.price.replace(/[^0-9]/g, '')),
       whatsapp: formData.whatsapp,
       rating: formData.rating,
-      image: imagePreview || null,
+      photo_url: photoUrl,
+      is_active: true,
     }
 
     if (editingProduct) {
       // Update product
       const { error: updateError } = await supabase
-        .from('products')
-        .update({ ...productData, updatedAt: new Date().toISOString() })
+        .from('umkm_products')
+        .update(productData)
         .eq('id', editingProduct.id)
 
       if (updateError) {
@@ -142,7 +178,7 @@ function UMKMContent() {
     } else {
       // Create new product
       const { error: insertError } = await supabase
-        .from('products')
+        .from('umkm_products')
         .insert([productData])
 
       if (insertError) {
@@ -159,7 +195,7 @@ function UMKMContent() {
 
   const handleDelete = async (id: string) => {
     const { error: deleteError } = await supabase
-      .from('products')
+      .from('umkm_products')
       .delete()
       .eq('id', id)
 
@@ -405,7 +441,12 @@ function UMKMContent() {
                   </label>
                   <select
                     value={formData.category}
-                    onChange={(e) => setFormData({ ...formData, category: e.target.value as any })}
+                    onChange={(e) =>
+                      setFormData({
+                        ...formData,
+                        category: e.target.value as 'Makanan' | 'Minuman' | 'Kerajinan' | 'Lainnya',
+                      })
+                    }
                     className="w-full px-4 py-3 border-2 border-slate-200 rounded-lg focus:border-blue-500 focus:outline-none transition-colors"
                     required
                   >

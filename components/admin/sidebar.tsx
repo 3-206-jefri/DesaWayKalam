@@ -3,8 +3,6 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { 
-  Home, 
-  MapPin, 
   Store, 
   LayoutDashboard,
   Menu,

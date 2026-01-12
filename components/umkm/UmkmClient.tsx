@@ -28,11 +28,6 @@ export default function UmkmClient({ initialProducts, categories }: UmkmClientPr
     ? initialProducts 
     : initialProducts.filter(p => p.category === activeCategory)
 
-  // Calculate review count based on rating (mock for now)
-  const getReviewCount = (rating: number) => {
-    return Math.floor(rating * 20) + Math.floor(Math.random() * 50)
-  }
-
   return (
     <>
       {/* Category Filter */}
@@ -48,12 +43,11 @@ export default function UmkmClient({ initialProducts, categories }: UmkmClientPr
           <ProductCard
             key={product.id}
             slug={product.id}
-            image={product.image || "/uploaded_image_0_1768037972713.png"}
+            image={product.image || ""}
             name={product.name}
             description={product.description || ""}
             price={`Rp ${product.price.toLocaleString('id-ID')}`}
             rating={product.rating}
-            reviewCount={getReviewCount(product.rating)}
             whatsappNumber={product.whatsapp.replace(/\D/g, '')}
           />
         ))}
