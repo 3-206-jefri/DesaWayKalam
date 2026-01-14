@@ -23,8 +23,8 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
-            <Mountain className="w-8 h-8 text-blue-600" />
-            <span className="text-xl font-bold text-slate-900">Desa Wisata</span>
+            <img src="/Logo_Lampung_Selatan.png" alt="Logo Desa Wisata" className="w-10 h-10 object-contain" />
+            <span className="text-xl font-bold text-slate-900">Way Kalam</span>
           </Link>
 
           {/* Nav Links */}
