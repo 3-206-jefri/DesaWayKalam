@@ -15,121 +15,121 @@ const teamMembers = [
     name: "Alsa Trianta Bastanta Sembiring",
     role: "Ketua",
     division: "Teknik Sipil, Institut Teknologi Sumatera",
-    image: "", // isi nanti
+    image: "/personil/alsaa.jpg",
   },
   {
     name: "Cornelius Pebrianta Brahmana",
     role: "Sekretaris Jendral",
     division: "Teknik Elektro, Institut Teknologi Sumatera",
-    image: "",
+    image: "/personil/cornell.jpg",
   },
   {
     name: "Jesika Filosovi Br Perangin Angin",
     role: "Sekretaris 1",
     division: "Teknik Informatika, Institut Teknologi Sumatera",
-    image: "",
+    image: "/personil/jesii.jpg",
   },
   {
     name: "Nadya Grasya Br Sinuhaji",
     role: "Sekretaris 2",
     division: "Teknik Biomedis, Institut Teknologi Sumatera",
-    image: "",
+    image: "/personil/nadyaa.jpg",
   },
   {
     name: "Sukma Vinesia Br Ginting",
     role: "Bendahara 1",
     division: "Rekayasa Kehutanan, Institut Teknologi Sumatera",
-    image: "",
+    image: "/personil/sukmaa.jpg",
   },
   {
     name: "Eirene Gita Ginting",
     role: "Bendahara 2",
     division: "Perencanaan Wilayah dan Kota, Institut Teknologi Sumatera",
-    image: "",
+    image: "/personil/eirenn.jpg",
   },
   {
     name: "Lim Gus Aspuri Hutabarat",
     role: "Kepala Divisi Acara",
     division: "Teknik Geologi, Institut Teknologi Sumatera",
-    image: "",
+    image: "/personil/limguss.jpg",
   },
   {
     name: "Rani Pagetha Br Ginting",
     role: "Staff Divisi Acara",
     division: "Rekayasa Kehutanan, Institut Teknologi Sumatera",
-    image: "",
+    image: "/personil/ranii.jpg",
   },
   {
     name: "Audy Olivya Br Gurusinga",
     role: "Staff Divisi Acara",
     division: "Teknik Informatika, Institut Teknologi Sumatera",
-    image: "",
+    image: "/personil/audyy.jpg",
   },
   {
     name: "Windry Meidi E Br Tinambunan",
     role: "Staff Divisi Acara",
     division: "Teknik Pertambangan, Institut Teknologi Sumatera",
-    image: "",
+    image: "/personil/windryy.jpg",
   },
   {
     name: "Asti Agustin",
     role: "Kepala Divisi Konsumsi",
     division: "Teknik Biomedis, Institut Teknologi Sumatera",
-    image: "",
+    image: "/personil/astii.jpg",
   },
   {
     name: "Tri Putri Sormin",
     role: "Staff Divisi Konsumsi",
     division: "Teknik Informatika, Institut Teknologi Sumatera",
-    image: "",
+    image: "/personil/sorminn.jpg",
   },
   {
     name: "Emia Hosana br Ginting",
     role: "Staff Divisi Konsumsi",
     division: "Perencanaan Wilayah dan Kota, Institut Teknologi Sumatera",
-    image: "",
+    image: "/personil/emiaa.jpg",
   },
   {
     name: "Putri Windari Sitohang",
     role: "Staff Divisi Konsumsi",
     division: "Rekayasa Kehutanan, Institut Teknologi Sumatera",
-    image: "",
+    image: "/personil/putrii.jpg",
   },
   {
     name: "Salsabila Thahirah",
     role: "Staff Divisi Konsumsi",
     division: "Teknik Biomedis, Institut Teknologi Sumatera",
-    image: "",
+    image: "/personil/salsabilaa.jpg",
   },
   {
     name: "Ivan Oktavianus Bangun",
     role: "Kepala Divisi Humas",
     division: "Teknik Industri, Institut Teknologi Sumatera",
-    image: "",
+    image: "/personil/ivann.jpg",
   },
   {
     name: "Frandy Jonathan Ginting",
     role: "Staff Divisi Humas",
     division: "Teknik Sipil, Institut Teknologi Sumatera",
-    image: "",
+    image: "/personil/natann.jpg",
   },
   {
     name: "Elfrita Andriyanti Hutabarat",
     role: "Staff Divisi Humas",
     division: "Teknik Biomedis, Institut Teknologi Sumatera",
-    image: "",
+    image: "/personil/elfritaa.jpg",
   },
   {
     name: "Mika Alemina Ginting",
     role: "Staff Divisi Humas",
     division: "Teknik Geologi, Institut Teknologi Sumatera",
-    image: "",
+    image: "/personil/mikaa.jpg",
   },
   {
     name: "Juliani Leony Putri Melati Manalu",
     role: "Kepala Divisi PDD",
     division: "Teknik Informatika, Institut Teknologi Sumatera",
-    image: "",
+    image: "/personil/leonyy.jpg",
   },
   {
     name: "Virgin Hillsky Br Bukit",
@@ -141,57 +141,58 @@ const teamMembers = [
     name: "Widia Salsalina Br Singarimbun",
     role: "Staff Divisi PDD",
     division: "Teknik Informatika, Institut Teknologi Sumatera",
-    image: "",
+    image: "/personil/widiaa.jpg",
   },
   {
     name: "Via Cinta Simamora",
     role: "Staff Divisi PDD",
     division: "Teknik Pertambangan, Institut Teknologi Sumatera",
-    image: "",
+    image: "/personil/viaa.jpg",
   },
   {
     name: "Ari Trigimanta Ginting",
     role: "Kepala Divisi Operasional",
     division: "Teknik Geofisika, Institut Teknologi Sumatera",
-    image: "",
+    image: "/personil/arii.jpg",
   },
   {
     name: "Lukman Deni Pasaribu",
     role: "Staff Divisi Operasional",
     division: "Teknik Pertambangan, Institut Teknologi Sumatera",
-    image: "",
+    image: "/personil/lukemann.jpg",
   },
   {
     name: "Triya Wulandari",
     role: "Staff Divisi Operasional",
     division: "Teknik Biomedis, Institut Teknologi Sumatera",
-    image: "",
+    image: "/personil/triyaa.jpg",
   },
   {
     name: "Muhamad Rafi Ilham",
     role: "Staff Divisi Operasional",
     division: "Teknik Informatika, Institut Teknologi Sumatera",
-    image: "",
+    image: "/personil/rapii.jpg",
   },
   {
     name: "Jefri Wahyu Fernando Sembiring",
     role: "Staff Divisi Operasional",
     division: "Teknik Informatika, Institut Teknologi Sumatera",
-    image: "",
+    image: "/personil/jeptoll.jpg",
   },
   {
     name: "Kevin Sebayang",
     role: "Staff Divisi Operasional",
     division: "Rekayasa Kehutanan, Institut Teknologi Sumatera",
-    image: "",
+    image: "/personil/kevinn.jpg",
   },
   {
     name: "Andryano Shevchenko Limbong",
     role: "Staff Divisi Operasional",
     division: "Teknik Informatika, Institut Teknologi Sumatera",
-    image: "",
+    image: "/personil/andryanoo.jpg",
   },
 ]
+
 
 
 /* ===== Utils: Auto Avatar Color ===== */
@@ -214,34 +215,21 @@ function getAvatarColor(name: string) {
 
 /* ===== Avatar Component ===== */
 function Avatar({ member }: { member: TeamMember }) {
-  const [imgError, setImgError] = useState(false)
-  const gradient = getAvatarColor(member.name)
-
   return (
     <div className="relative w-20 h-20 mx-auto mb-4 group">
-      {member.image && !imgError ? (
-        <Image
-          src={member.image}
-          alt={member.name}
-          fill
-          sizes="80px"
-          className="rounded-full object-cover transition-transform duration-300 group-hover:scale-110"
-          onError={() => setImgError(true)}
-        />
-      ) : (
-        <div
-          className={`w-20 h-20 rounded-full bg-gradient-to-br ${gradient}
-          flex items-center justify-center text-white text-2xl font-bold`}
-        >
-          {member.name.charAt(0)}
-        </div>
-      )}
+      <Image
+        src={member.image || "/personil/default.jpg"}
+        alt={member.name}
+        fill
+        sizes="80px"
+        className="rounded-full object-cover transition-transform duration-300 group-hover:scale-110"
+      />
 
-      {/* Hover Ring */}
       <div className="absolute inset-0 rounded-full ring-2 ring-transparent group-hover:ring-blue-400 transition"></div>
     </div>
   )
 }
+
 
 export default function TeamSection() {
   return (
