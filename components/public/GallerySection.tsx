@@ -2,7 +2,7 @@ import Image from "next/image"
 
 const galleryImages = [
   {
-    src: "/uploaded_image_0_1768037972713.png",
+    src: "/Background/way-kalam1.png",
     alt: "Gallery 1",
     className: "md:col-span-2 md:row-span-2 relative h-[500px]"
   },

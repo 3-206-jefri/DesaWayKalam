@@ -4,33 +4,34 @@ import { MapPin, Users, Home as HomeIcon, Sparkles } from "lucide-react"
 const features = [
   {
     icon: MapPin,
-    title: "Alam yang Asri",
-    description: "Dikelilingi pegunungan dan persawahan hijau yang menenangkan",
+    title: "Lereng Gunung Rajabasa",
+    description: "Berada di kawasan pegunungan dengan udara sejuk dan panorama alam yang menenangkan",
     bgColor: "bg-blue-100",
     iconColor: "text-blue-600"
   },
   {
     icon: Users,
-    title: "Masyarakat Ramah",
-    description: "Penduduk lokal yang hangat menyambut setiap pengunjung",
+    title: "Masyarakat Berdaya",
+    description: "Warga lokal aktif terlibat dalam pengelolaan wisata dan kegiatan edukatif",
     bgColor: "bg-green-100",
     iconColor: "text-green-600"
   },
   {
     icon: HomeIcon,
-    title: "Budaya Autentik",
-    description: "Tradisi dan adat istiadat yang masih terjaga dengan baik",
+    title: "Budaya & Kearifan Lokal",
+    description: "Tradisi, seni, dan nilai adat yang masih hidup dalam keseharian masyarakat desa",
     bgColor: "bg-purple-100",
     iconColor: "text-purple-600"
   },
   {
     icon: Sparkles,
-    title: "Pengalaman Unik",
-    description: "Aktivitas wisata yang tak terlupakan untuk semua usia",
+    title: "Wisata Edukatif",
+    description: "Pengalaman belajar tentang alam, pertanian, dan kehidupan desa secara langsung",
     bgColor: "bg-orange-100",
     iconColor: "text-orange-600"
   }
 ]
+
 
 export default function AboutSection() {
   return (
@@ -41,7 +42,7 @@ export default function AboutSection() {
           <div className="relative">
             <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl">
               <Image
-                src="/uploaded_image_1_1768037972713.png"
+                src="/Background/Gateway.jpeg"
                 alt="Tentang Desa"
                 fill
                 className="object-cover"
@@ -58,10 +59,10 @@ export default function AboutSection() {
           <div>
             <span className="text-blue-600 font-semibold mb-4 block">TENTANG KAMI</span>
             <h2 className="text-4xl font-bold text-slate-900 mb-6">
-              Desa yang Kaya akan Keindahan dan Budaya
+              Desa Way Kalam
             </h2>
             <p className="text-lg text-slate-600 mb-8 leading-relaxed">
-              Desa Wisata kami terletak di dataran tinggi yang dikelilingi oleh pemandangan alam yang memukau. Dengan sejarah panjang dan budaya yang kental, desa ini menjadi destinasi sempurna untuk melepas diri dari hiruk pikuk kota. Kami menawarkan pengalaman wisata autentik yang menggabungkan keindahan alam, kekayaan budaya, dan keramahan masyarakat lokal.
+              Desa Wisata Way Kalam merupakan desa wisata di Kabupaten Lampung Selatan yang terletak di lereng Gunung Rajabasa, berjarak ±17 km dari Kota Kalianda. Berada pada ketinggian 372 mdpl, desa ini mengusung konsep Wisata Alam & Budaya yang menawarkan pengalaman edukatif melalui interaksi dengan alam, pertanian, seni tradisi, serta kearifan lokal yang masih terjaga dalam suasana pedesaan yang asri.
             </p>
 
             {/* Features */}

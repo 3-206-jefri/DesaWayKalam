@@ -126,7 +126,7 @@ export default function Footer() {
           </h3>
           <div className="overflow-hidden rounded-lg border border-white/30">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!..."
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d417.25847504504753!2d105.66362837395172!3d-5.7628348460259!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e410de67c7d2147%3A0x2690919fb5482f1b!2sBALAI%20DESA%20WA%20KALAM!5e0!3m2!1sid!2sid!4v1768723776430!5m2!1sid!2sid"
               width="100%"
               height="220"
               loading="lazy"

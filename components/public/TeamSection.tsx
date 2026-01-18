@@ -129,13 +129,13 @@ const teamMembers = [
     name: "Juliani Leony Putri Melati Manalu",
     role: "Kepala Divisi PDD",
     division: "Teknik Informatika, Institut Teknologi Sumatera",
-    image: "/personil/leonyy.jpg",
+    image: "/personil/IMG_1637.png",
   },
   {
     name: "Virgin Hillsky Br Bukit",
     role: "Staff Divisi PDD",
     division: "Perencanaan Wilayah dan Kota, Institut Teknologi Sumatera",
-    image: "/personil/virgin.jpg",
+    image: "/personil/virginn.jpg",
   },
   {
     name: "Widia Salsalina Br Singarimbun",
