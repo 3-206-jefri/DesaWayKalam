@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { Mountain } from "lucide-react"
 
@@ -22,10 +23,13 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
-            <img src="/Logo_Lampung_Selatan.png" alt="Logo Desa Wisata" className="w-10 h-10 object-contain" />
-            <span className="text-xl font-bold text-slate-900">Way Kalam</span>
-          </Link>
+          <div className="flex items-center gap-3">
+            <Link href="/" className="flex items-center gap-2">
+              <img src="/Logo_Lampung_Selatan.png" alt="Logo Desa Wisata" className="w-10 h-10 object-contain" />
+              <span className="text-xl font-bold text-slate-900">Way Kalam</span>
+            </Link>
+            <div className="h-8 w-px bg-slate-300 mx-2"></div>
+          </div>
 
           {/* Nav Links */}
           <div className="hidden md:flex items-center gap-8">
