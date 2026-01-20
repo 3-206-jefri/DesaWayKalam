@@ -2,29 +2,42 @@ import { Calendar, Users, Award, Store } from "lucide-react"
 
 const milestones = [
   {
-    year: "1920",
-    title: "Berdirinya Desa",
-    description: "Desa ini didirikan oleh para sekumpulan petani yang bermigrasi dari dataran rendah",
+    year: "1999",
+    title: "Potensi Wisata Alam dan Budaya Way Kalam",
+    description: "Desa Way Kalam dikenal memiliki potensi wisata alam dan budaya di lereng Gunung Rajabasa yang dijaga secara turun-temurun oleh masyarakat sebagai bagian dari kearifan lokal desa.",
     position: "left"
   },
   {
-    year: "1965",
-    title: "Pembangunan Infrastruktur",
-    description: "Pembangunan jalan utama dan fasilitas umum pertama di desa",
+    year: "2013",
+    title: "Pembentukan Kelompok Putra Krakatau",
+    description: "Kelompok Putra Krakatau dibentuk sebagai inisiatif masyarakat yang berperan sebagai penggerak awal dalam pengelolaan potensi alam desa, kegiatan sosial, serta pemberdayaan masyarakat.",
     position: "right"
   },
   {
-    year: "1998",
-    title: "Pengembangan Pariwisata",
-    description: "Mulai dikembangkan sebagai desa wisata dengan potensi alam dan budaya",
+    year: "2014",
+    title: "Pembentukan dan Pembinaan Pokdarwis",
+    description: "Pokdarwis Desa Way Kalam dibentuk dan dibina oleh Kelompok Putra Krakatau selama satu tahun guna memperkuat kapasitas kelembagaan dan pengelolaan pariwisata desa.",
+    position: "left"
+  },
+  {
+    year: "2017",
+    title: "Media Air Terjun Way Kalam",
+    description: "Air Terjun Way Kalam mulai dikenal secara luas setelah mendapatkan eksposur dari media perjalanan, yang berdampak pada meningkatnya minat kunjungan wisatawan.",
+    position: "right"
+  },
+  {
+    year: "2019",
+    title: "Peningkatan Sarana dan Prasarana Pariwisata",
+    description: "Desa Wisata Way Kalam mulai melakukan pembenahan melalui peningkatan sarana dan prasarana pendukung pariwisata dengan dukungan berbagai pihak.",
     position: "left"
   },
   {
     year: "2020",
-    title: "Digitalisasi UMKM",
-    description: "Pelaku UMKM mulai go digital dengan pemasaran online",
+    title: "Pengembangan SDM dan Digitalisasi Desa",
+    description: "Pengembangan sumber daya manusia serta digitalisasi promosi wisata dan UMKM desa mulai diterapkan untuk mendukung pengelolaan desa wisata yang berkelanjutan.",
     position: "right"
   }
+
 ]
 
 export default function HistorySection() {
@@ -38,7 +51,7 @@ export default function HistorySection() {
             Perjalanan Panjang Desa Kami
           </h2>
           <p className="text-base md:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
-            Desa Wisata kami memiliki sejarah yang kaya dan penuh makna. Dari sebuah permukiman kecil hingga menjadi destinasi wisata yang dikenal luas, berikut adalah perjalanan kami.
+            Desa Wisata Way Kalam memiliki sejarah yang kaya dan penuh makna. Dari sebuah permukiman kecil hingga menjadi destinasi wisata yang dikenal luas, berikut adalah perjalanan kami.
           </p>
         </div>
 
@@ -102,25 +115,20 @@ export default function HistorySection() {
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 max-w-5xl mx-auto">
-          <div className="text-center p-6 bg-blue-50/50 rounded-2xl border border-blue-100 hover:border-blue-200 transition-colors">
-            <Calendar className="w-8 h-8 text-blue-600 mx-auto mb-3" />
-            <div className="text-2xl md:text-3xl font-bold text-slate-900 mb-1">100+</div>
-            <div className="text-xs md:text-sm text-slate-600">Tahun Sejarah</div>
-          </div>
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 max-w-5xl mx-auto">
           <div className="text-center p-6 bg-green-50/50 rounded-2xl border border-green-100 hover:border-green-200 transition-colors">
             <Users className="w-8 h-8 text-green-600 mx-auto mb-3" />
-            <div className="text-2xl md:text-3xl font-bold text-slate-900 mb-1">2.500+</div>
+            <div className="text-2xl md:text-3xl font-bold text-slate-900 mb-1">1.269+</div>
             <div className="text-xs md:text-sm text-slate-600">Penduduk</div>
           </div>
           <div className="text-center p-6 bg-purple-50/50 rounded-2xl border border-purple-100 hover:border-purple-200 transition-colors">
             <Award className="w-8 h-8 text-purple-600 mx-auto mb-3" />
-            <div className="text-2xl md:text-3xl font-bold text-slate-900 mb-1">15+</div>
+            <div className="text-2xl md:text-3xl font-bold text-slate-900 mb-1">9+</div>
             <div className="text-xs md:text-sm text-slate-600">Penghargaan</div>
           </div>
           <div className="text-center p-6 bg-orange-50/50 rounded-2xl border border-orange-100 hover:border-orange-200 transition-colors">
             <Store className="w-8 h-8 text-orange-600 mx-auto mb-3" />
-            <div className="text-2xl md:text-3xl font-bold text-slate-900 mb-1">50+</div>
+            <div className="text-2xl md:text-3xl font-bold text-slate-900 mb-1">8+</div>
             <div className="text-xs md:text-sm text-slate-600">UMKM Aktif</div>
           </div>
         </div>

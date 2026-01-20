@@ -42,18 +42,19 @@ export interface WisataData {
 export const wisataData: Record<string, WisataData> = {
   "air-terjun-pelangi": {
     slug: "air-terjun-pelangi",
-    title: "Air Terjun Pelangi",
+    title: "Air Terjun Way Kalam",
     subtitle: "Keajaiban alam tersembunyi di jantung desa kami",
-    backgroundImage: "/uploaded_image_0_1768037972713.png",
+    backgroundImage: "/Background/hq720.jpg",
     description: [
-      "Air terjun Pelangi merupakan salah satu destinasi wisata alam yang paling memukau di desa kami. Dinamakan 'Pelangi' karena pada waktu tertentu, sinar matahari yang menembus air terjun menciptakan efek pelangi yang menakjubkan.",
-      "Air terjun ini memiliki ketinggian sekitar 50 meter dan dikelilingi oleh hutan tropis yang masih asri. Pengunjung dapat menikmati kesegaran air sambil menikmati keindahan udara pegunungan yang menyegarkan.",
-      "Untuk mencapai lokasi, pengunjung akan melalui jalur trekking sepanjang 1.5 km melalui hutan dengan pemandangan yang tak kalah indah. Perjalanan ini cocok untuk semua tingkat kebugaran dan dijamin akan memberikan pengalaman yang tak terlupakan."
-    ],
+  "Air Terjun Way Kalam terletak di Desa Way Kalam, Kecamatan Penengahan, Kabupaten Lampung Selatan. Lokasinya relatif dekat dengan Ibu Kota Kabupaten Lampung Selatan, yaitu Kalianda, sehingga mudah dijangkau oleh wisatawan lokal maupun luar daerah. Pengunjung dapat memanfaatkan layanan Google Maps melalui smartphone untuk mempermudah perjalanan menuju lokasi wisata.",
+  "Jarak Air Terjun Way Kalam dari pusat Kota Kalianda sekitar 18 kilometer dengan waktu tempuh normal kurang lebih 30 menit perjalanan menggunakan kendaraan bermotor. Sementara itu, dari Kota Bandar Lampung jaraknya sekitar 78 kilometer dengan estimasi waktu perjalanan sekitar 2,5 jam, tergantung kondisi lalu lintas.",
+  "Rute menuju Air Terjun Way Kalam dari Kota Kalianda dapat ditempuh melalui jalan utama yang mengarah ke Kecamatan Penengahan. Setelah tiba di Kecamatan Penengahan, perjalanan dilanjutkan menuju Desa Way Kalam hingga mencapai area wisata. Akses jalan menuju lokasi cukup baik dan dapat dilalui oleh kendaraan roda dua maupun roda empat."
+],
     gallery: [
-      { src: "/uploaded_image_0_1768037972713.png", alt: "Air Terjun Pelangi" },
-      { src: "/uploaded_image_2_1768037972713.png", alt: "Pemandangan Sekitar" },
-      { src: "/uploaded_image_4_1768037972713.png", alt: "Area Wisata" }
+      { src: "/Background/Galeri-Air-Terjun-3.jpg", alt: "Air Terjun Way Kalam" },
+      { src: "/Background/Galeri-Air-Terjun-5.jpg", alt: "Pemandangan Sekitar" },
+      { src: "/Background/IMG_1620.jpg", alt: "Air Terjun Anakan" }
+
     ],
     facilities: [
       { icon: Car, name: "Parkir Luas" },
@@ -174,12 +175,12 @@ export const wisataData: Record<string, WisataData> = {
         }
       ]
     },
-    location: "Dusun Segar, Desa Wisata, Kec. Alam, Kab. Indah",
+    location: "Way Kalam, Penengahan, Lampung Selatan, Lampung",
     operationalHours: "Senin - Minggu: 07.00 - 17.00 WIB",
     contact: "+62 812 3456 7890",
     ticketPrice: "Rp 15.000",
     whatsappNumber: "6281234567890",
-    mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.521260322283!2d106.8195613!3d-6.1751171!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5d2e764b12d%3A0x3d2ad6e1e0e9bcc8!2sMonas!5e0!3m2!1sen!2sid!4v1234567890"
+    mapEmbedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3969.5600099706967!2d105.66186047503419!3d-5.776258394206341!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e410dbdb97d85bd%3A0x4d4a89444dee19a5!2sAir%20Terjun%20Way%20Kalam!5e0!3m2!1sen!2sid!4v1768876950850!5m2!1sen!2sid"
   }
 }
 

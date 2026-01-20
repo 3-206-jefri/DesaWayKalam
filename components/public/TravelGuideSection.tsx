@@ -3,7 +3,7 @@ import { Plane, Train, Bus, Car, Clock, MapPin } from "lucide-react"
 const travelRoutes = [
   {
     city: "Jakarta",
-    duration: "3 jalur rute",
+    duration: "2 jalur rute",
     icon: Plane,
     iconBg: "bg-blue-100",
     iconColor: "text-blue-600",
@@ -12,85 +12,38 @@ const travelRoutes = [
         type: "Pesawat + Rental",
         icon: Plane,
         duration: "3-4 jam",
-        description: "Bandara Soekarno-Hatta → Bandara Aril Soemardjan → Rental mobil ke desa (1 jam)"
+        description: "Bandara Soekarno-Hatta → Bandara Radin Intan II → Rental mobil ke desa (Estimasi Waktu 2 Jam)"
       },
       {
-        type: "Kereta Api",
-        icon: Train,
-        duration: "10-12 jam",
-        description: "Stasiun Gambir → Stasiun Solo Balapan → Lanjut angkutan ke desa"
-      },
-      {
-        type: "Bus",
-        icon: Bus,
-        duration: "10-12 jam",
-        description: "Terminal Kampung Rambutan → Rajabasa → Angkutan ke desa"
+        type: "Kendaraan Pribadi",
+        icon: Car,
+        duration: "4-5 Jam",
+        description: "Pelabuhan Merak → Pelabuhan Bakauheni → Gunung Rajabasa -> Desa Waykalam"
       }
     ]
   },
   {
-    city: "Surabaya",
+    city: "Bandar Lampung",
     duration: "2 jalur rute",
     icon: Car,
     iconBg: "bg-green-100",
     iconColor: "text-green-600",
     routes: [
       {
-        type: "Kereta Api",
-        icon: Train,
-        duration: "4-5 jam",
-        description: "Stasiun Gubeng → Stasiun Solo Balapan → Lanjut angkutan ke desa"
-      },
-      {
-        type: "Bus",
-        icon: Bus,
-        duration: "5-6 jam",
-        description: "Terminal Purabaya → Terminal Tirtonadi → Angkutan ke desa"
-      }
-    ]
-  },
-  {
-    city: "Yogyakarta",
-    duration: "2 jalur rute",
-    icon: Bus,
-    iconBg: "bg-purple-100",
-    iconColor: "text-purple-600",
-    routes: [
-      {
-        type: "Bus / Travel",
-        icon: Bus,
-        duration: "2-3 jam",
-        description: "Terminal Giwangan → Langsung ke lokasi desa wisata"
-      },
-      {
-        type: "Rental Mobil",
+        type: "Kendaraan Pribadi",
         icon: Car,
-        duration: "2 jam",
-        description: "Sewa mobil langsung menuju desa melalui jalan raya Solo"
-      }
-    ]
-  },
-  {
-    city: "Semarang",
-    duration: "2 jalur rute",
-    icon: Bus,
-    iconBg: "bg-orange-100",
-    iconColor: "text-orange-600",
-    routes: [
-      {
-        type: "Bus / Travel",
-        icon: Bus,
-        duration: "3-4 jam",
-        description: "Terminal Terboyo → Terminal Tirtonadi → Angkutan ke desa"
+        duration: "1-2 jam",
+        description: "Bandar Lampung  → Lintas Sumatera  → Kalianda → Gunung Rajabasa → Desa Waykalam"
       },
       {
-        type: "Rental Mobil",
+        type: "Kendaraan Pribadi",
         icon: Car,
-        duration: "2-3 jam",
-        description: "Sewa mobil via tol Trans Jawa menuju desa"
+        duration: "1-2 jam",
+        description: "Bandar Lampung → Sidomulyo → Kalianda → Gunung Rajabasa → Desa Waykalam"
       }
     ]
   }
+
 ]
 
 const travelTips = [

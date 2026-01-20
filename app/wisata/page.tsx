@@ -46,6 +46,6 @@ export default function WisataPage() {
 }
 
 export const metadata = {
-  title: "Air Terjun Pelangi - Desa Wisata",
-  description: "Keajaiban alam tersembunyi di jantung desa kami",
+  title: "Air Terjun Way Kalam - Desa Way Kalam",
+  description: "Keajaiban alam tersembunyi di desa kami",
 }
