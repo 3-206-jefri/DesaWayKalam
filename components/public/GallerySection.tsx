@@ -2,26 +2,33 @@ import Image from "next/image"
 
 const galleryImages = [
   {
-    src: "/Background/way-kalam1.png",
+    src: "/Background/Galery_Landing_4.jpg",
     alt: "Gallery 1",
-    className: "md:col-span-2 md:row-span-2 relative h-[500px]"
+    className: "lg:col-span-2 aspect-[16/9]"
   },
   {
-    src: "/uploaded_image_2_1768037972713.png",
+    src: "/Background/Galery_Landing_1.jpg",
     alt: "Gallery 2",
-    className: "relative h-[240px]"
+    className: "aspect-[4/5]"
   },
   {
-    src: "/uploaded_image_1_1768037972713.png",
+    src: "/Background/Galery_Landing_3.jpg",
     alt: "Gallery 3",
-    className: "relative h-[240px]"
+    className: "aspect-[4/5]"
   },
   {
-    src: "/uploaded_image_4_1768037972713.png",
+    src: "/Background/Galery_Landing_2.jpg",
     alt: "Gallery 4",
-    className: "relative h-[240px]"
+    className: "aspect-[4/5]"
+  },
+  {
+    src: "/Background/Galeri-Air-Terjun-5.jpg",
+    alt: "Gallery 5",
+    className: "aspect-[4/5]"
   }
 ]
+
+
 
 export default function GallerySection() {
   return (
@@ -38,18 +45,21 @@ export default function GallerySection() {
         </div>
 
         {/* Gallery Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {galleryImages.map((image, index) => (
-            <div 
-              key={index} 
-              className={`${image.className} rounded-2xl overflow-hidden group`}
+            <div
+            key={index}
+            className={`${image.className} relative rounded-2xl overflow-hidden group`}
             >
+
               <Image
                 src={image.src}
                 alt={image.alt}
                 fill
-                className="object-cover group-hover:scale-110 transition-transform duration-500"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
               />
+
               {index === 0 && (
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
               )}
