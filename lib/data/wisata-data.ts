@@ -45,12 +45,12 @@ export const wisataData: Record<string, WisataData> = {
   "air-terjun-pelangi": {
     slug: "air-terjun-pelangi",
     title: "Air Terjun Way Kalam",
-    subtitle: "Keajaiban alam tersembunyi di jantung desa kami",
+    subtitle: "Dua Pesona Air Terjun di Kaki Gunung Rajabasa",
     backgroundImage: "/Background/hq720.jpg",
     description: [
-  "Air Terjun Way Kalam terletak di Desa Way Kalam, Kecamatan Penengahan, Kabupaten Lampung Selatan. Lokasinya relatif dekat dengan Ibu Kota Kabupaten Lampung Selatan, yaitu Kalianda, sehingga mudah dijangkau oleh wisatawan lokal maupun luar daerah. Pengunjung dapat memanfaatkan layanan Google Maps melalui smartphone untuk mempermudah perjalanan menuju lokasi wisata.",
-  "Jarak Air Terjun Way Kalam dari pusat Kota Kalianda sekitar 18 kilometer dengan waktu tempuh normal kurang lebih 30 menit perjalanan menggunakan kendaraan bermotor. Sementara itu, dari Kota Bandar Lampung jaraknya sekitar 78 kilometer dengan estimasi waktu perjalanan sekitar 2,5 jam, tergantung kondisi lalu lintas.",
-  "Rute menuju Air Terjun Way Kalam dari Kota Kalianda dapat ditempuh melalui jalan utama yang mengarah ke Kecamatan Penengahan. Setelah tiba di Kecamatan Penengahan, perjalanan dilanjutkan menuju Desa Way Kalam hingga mencapai area wisata. Akses jalan menuju lokasi cukup baik dan dapat dilalui oleh kendaraan roda dua maupun roda empat."
+  "Air Terjun Way Kalam merupakan ikon wisata alam Desa Way Kalam yang terletak di kaki Gunung Rajabasa, Kabupaten Lampung Selatan. Berjarak sekitar 18 km dari Kota Kalianda, destinasi ini mudah dijangkau oleh wisatawan dengan akses jalan yang cukup baik dan dapat dilalui kendaraan roda dua maupun roda empat.",
+  "Wisata ini menawarkan dua daya tarik utama, yaitu Air Terjun Besar dengan aliran air yang deras dan menenangkan, serta Air Terjun Anakan yang cocok untuk bersantai, berfoto, hingga berkemah di alam terbuka. Pengunjung juga dapat menikmati trekking ringan di sekitar daerah aliran sungai, udara pegunungan yang sejuk, serta mengenal budaya dan kuliner khas masyarakat desa.",
+  "Air Terjun Way Kalam menghadirkan perpaduan petualangan alam, relaksasi, dan eksplorasi budaya dalam satu destinasi wisata yang alami dan autentik."
 ],
     gallery: [
       { src: "/Background/Galeri-Air-Terjun-3.jpg", alt: "Air Terjun Way Kalam" },
@@ -107,7 +107,7 @@ export const wisataData: Record<string, WisataData> = {
     contact: "+62 822 7929 2579",
     ticketPrice: "Rp 7.000",
     ticketMotor : "Rp 3.000",
-    ticketMobile : "Rp 5.000",
+    ticketMobile : "Rp 15.000",
     
     whatsappNumber: "6282279292579",
     email: "deswita.waykalam@gmail.com",

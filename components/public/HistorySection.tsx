@@ -118,7 +118,7 @@ export default function HistorySection() {
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 max-w-5xl mx-auto">
           <div className="text-center p-6 bg-green-50/50 rounded-2xl border border-green-100 hover:border-green-200 transition-colors">
             <Users className="w-8 h-8 text-green-600 mx-auto mb-3" />
-            <div className="text-2xl md:text-3xl font-bold text-slate-900 mb-1">1.269+</div>
+            <div className="text-2xl md:text-3xl font-bold text-slate-900 mb-1">1.200+</div>
             <div className="text-xs md:text-sm text-slate-600">Penduduk</div>
           </div>
           <div className="text-center p-6 bg-purple-50/50 rounded-2xl border border-purple-100 hover:border-purple-200 transition-colors">

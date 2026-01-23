@@ -12,7 +12,7 @@ const travelRoutes = [
         type: "Pesawat + Rental",
         icon: Plane,
         duration: "3-4 jam",
-        description: "Bandara Soekarno-Hatta → Bandara Radin Intan II → Rental mobil ke desa (Estimasi Waktu 2 Jam)"
+        description: "Bandara Soekarno-Hatta → Bandara Radin Intan II → Rental mobil ke desa"
       },
       {
         type: "Kendaraan Pribadi",

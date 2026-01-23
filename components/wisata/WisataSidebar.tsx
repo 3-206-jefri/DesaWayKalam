@@ -69,12 +69,12 @@ export default function WisataSidebar({
 
       {/* Tiket Masuk */}
       <div className="bg-white border border-slate-200 rounded-xl p-6">
-  <h3 className="font-bold text-slate-900 mb-4">Tiket Masuk</h3>
+  <h3 className="font-bold text-slate-900 mb-4">HARGA TIKET</h3>
 
   <div className="space-y-4 mb-6">
     <div className="flex justify-between items-center">
       <div>
-        <p className="font-semibold text-slate-800">Tiket Orang</p>
+        <p className="font-semibold text-slate-800">Tiket Masuk</p>
         <p className="text-sm text-slate-500">per orang</p>
       </div>
       <p className="text-xl font-bold text-blue-600">{ticketPrice}</p>
@@ -82,7 +82,7 @@ export default function WisataSidebar({
 
     <div className="flex justify-between items-center">
       <div>
-        <p className="font-semibold text-slate-800">Tiket Motor</p>
+        <p className="font-semibold text-slate-800">Tiket Parkir Motor</p>
         <p className="text-sm text-slate-500">per motor</p>
       </div>
       <p className="text-xl font-bold text-blue-600">{ticketMotor}</p>
@@ -90,7 +90,7 @@ export default function WisataSidebar({
 
     <div className="flex justify-between items-center">
       <div>
-        <p className="font-semibold text-slate-800">Tiket Mobil</p>
+        <p className="font-semibold text-slate-800">Tiket Parkir Mobil</p>
         <p className="text-sm text-slate-500">per mobil</p>
       </div>
       <p className="text-xl font-bold text-blue-600">{ticketMobile}</p>
