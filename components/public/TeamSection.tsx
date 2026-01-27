@@ -129,7 +129,7 @@ const teamMembers = [
     name: "Juliani Leony Putri Melati Manalu",
     role: "Kepala Divisi PDD",
     division: "Teknik Informatika, Institut Teknologi Sumatera",
-    image: "/Personil/IMG_1637.png",
+    image: "/Personil/leonyyy.jpg",
   },
   {
     name: "Virgin Hillsky Br Bukit",
