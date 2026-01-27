@@ -38,14 +38,14 @@ export const layananData: LayananData[] = [
     shortDescription: "Penginapan nyaman dengan lokasi strategis dekat air terjun",
     description:
       "Homestay Desa Wisata Way Kalam Syariah adalah pilihan akomodasi hemat dengan fasilitas standar yang memberikan pengalaman terbaik. Terletak di jantung Desa Way Kalam, Kabupaten Lampung, homestay ini menawarkan akses mudah ke berbagai destinasi wisata utama. Sejak dibuka pada 31 Maret 2022, Homestay Desa Wisata Way Kalam Syariah telah menjadi tempat yang memanjakan tamu dengan kenyamanan dan layanan prima. Kini, Anda dapat melakukan pemesanan kamar secara online melalui aplikasi OYO, Traveloka, atau Agoda dengan kata kunci \"Way Kalam\",",
-    image: "/uploaded_image_0_1768037972713.png",
+    image: "/Background/homestayisah.png",
     price: "Rp 100.000",
     priceUnit: "per malam",
 
     location: "Desa Way Kalam, Kaki Gunung Rajabasa, Lampung Selatan",
     mapEmbedUrl: defaultMapEmbedUrl,
-    whatsappNumber: "6281234567891",
-    contactNumber: "+62 812 3456 7891",
+    whatsappNumber: "6282279292579",
+    contactNumber: "+62 822 7929 2579",
     features: [
       "Kamar Bersih dan Nyaman",
       "Kamar Mandi dengan Air Mengalir",
@@ -68,8 +68,8 @@ export const layananData: LayananData[] = [
     priceUnit: "per malam",
     location: "Desa Way Kalam, Kaki Gunung Rajabasa, Lampung Selatan",
     mapEmbedUrl: defaultMapEmbedUrl,
-    whatsappNumber: "6281234567892",
-    contactNumber: "+62 812 3456 7892",
+    whatsappNumber: "6282279292579",
+    contactNumber: "+62 822 7929 2579",
     features: [
       "Kamar Mandi Bersama",
       "Televisi",
@@ -91,8 +91,8 @@ export const layananData: LayananData[] = [
     priceUnit: "per malam",
     location: "Desa Way Kalam, Kaki Gunung Rajabasa, Lampung Selatan",
     mapEmbedUrl: defaultMapEmbedUrl,
-    whatsappNumber: "6281234567893",
-    contactNumber: "+62 812 3456 7893",
+    whatsappNumber: "6282279292579",
+    contactNumber: "+62 822 7929 2579",
     features: [
       "Kamar Mandi Bersama",
       "Televisi",
