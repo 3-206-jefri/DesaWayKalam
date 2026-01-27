@@ -122,6 +122,7 @@ export default function ImageUpload({
                 alt={image.file.name}
                 fill
                 className="object-cover"
+                unoptimized
               />
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all flex items-center justify-center">
                 <button

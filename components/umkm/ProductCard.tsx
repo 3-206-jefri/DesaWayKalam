@@ -44,7 +44,7 @@ export default function ProductCard({
       {/* Product Image */}
       <div className="relative h-64 bg-slate-100">
         {isValidImageSrc ? (
-          <Image src={normalizedImage} alt={name} fill className="object-cover" />
+          <Image src={normalizedImage} alt={name} fill className="object-cover" unoptimized />
         ) : (
           <div className="absolute inset-0 flex items-center justify-center text-slate-400">
             <ImageIcon className="w-10 h-10" />

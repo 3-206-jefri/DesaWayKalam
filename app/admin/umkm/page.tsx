@@ -308,6 +308,7 @@ function UMKMContent() {
                               alt={product.name}
                               fill
                               className="object-cover"
+                              unoptimized
                             />
                           </div>
                         )}
@@ -390,6 +391,7 @@ function UMKMContent() {
                         alt="Preview"
                         fill
                         className="object-cover"
+                        unoptimized
                       />
                     </div>
                   )}
