@@ -10,7 +10,7 @@ import {
 
 
 const relatedLinks = [
-  { name: "e-Prodskel", logo: "/prodeskel.png", href: "https://prodeskel.binapemdes.kemendagri.go.id/app_Login/" },
+  { name: "e-Prodskel", logo: "/Prodeskel.png", href: "https://prodeskel.binapemdes.kemendagri.go.id/app_Login/" },
   { name: "SID Kemendesa", logo: "/SID.png", href: "https://sid.kemendesa.go.id/" },
   { name: "BUMDes", logo: "/Bumdes.png", href: "https://bumdes.kemendesa.go.id/" },
   { name: "Desaku Maju", logo: "/Logo_Desaku_Maju_128.png", href: "#" },
