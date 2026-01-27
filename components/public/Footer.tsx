@@ -88,7 +88,7 @@ export default function Footer() {
 
           <div className="flex gap-3 mb-4">
             <Image
-              src="/Logo_Lampung_Selatan.png"
+              src="/Background/Logo_Lampung_Selatan_Final.png"
               alt="Logo Desa"
               width={55}
               height={55}

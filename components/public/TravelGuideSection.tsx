@@ -11,7 +11,7 @@ const travelRoutes = [
       {
         type: "Pesawat + Rental",
         icon: Plane,
-        duration: "3-4 jam",
+        duration: "2-3 jam",
         description: "Bandara Soekarno-Hatta → Bandara Radin Intan II → Rental mobil ke desa"
       },
       {
@@ -47,10 +47,10 @@ const travelRoutes = [
 ]
 
 const travelTips = [
-  "Pesan tiket kereta/pesawat H-7 untuk harga terbaik",
-  "Hubungi kami untuk layanan penjemputan dari stasiun/bandara",
+  "Pesan tiket perjalanan H-7 untuk harga terbaik",
+  "Hubungi kami untuk layanan penjemputan dari bandara",
   "Gunakan aplikasi travel untuk perbandingan harga",
-  "Bawa jaket karena suhu desa cukup sejuk (18-25°C)"
+  "Membawa jaket karena suhu desa cukup sejuk (18-25°C)"
 ]
 
 export default function TravelGuideSection() {

@@ -2,27 +2,27 @@ import Image from "next/image"
 
 const galleryImages = [
   {
-    src: "/Background/Galery_Landing_4.jpg",
+    src: "/Background/Galeri_Landing1.jpg",
     alt: "Gallery 1",
-    className: "lg:col-span-2 aspect-[16/9]"
+    className: "lg:col-span-2 aspect-[18/9]"
   },
   {
-    src: "/Background/Galery_Landing_1.jpg",
+    src: "/Background/Galeri_Landing2.jpg",
     alt: "Gallery 2",
     className: "aspect-[4/5]"
   },
   {
-    src: "/Background/Galery_Landing_3.jpg",
+    src: "/Background/Galeri_Landing3.jpg",
     alt: "Gallery 3",
     className: "aspect-[4/5]"
   },
   {
-    src: "/Background/Galery_Landing_2.jpg",
+    src: "/Background/Galeri_Landing4.jpg",
     alt: "Gallery 4",
     className: "aspect-[4/5]"
   },
   {
-    src: "/Background/Galeri-Air-Terjun-5.jpg",
+    src: "/Background/Galeri_Landing5.jpg",
     alt: "Gallery 5",
     className: "aspect-[4/5]"
   }

@@ -45,10 +45,7 @@ export default function HeroSection() {
       {/* Hero Content */}
       <div className="relative z-10 max-w-4xl mx-auto px-4 text-center text-white">
         <div className="flex items-center justify-center gap-2 mb-6">
-          <div className="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center">
-            <span className="text-sm">👋</span>
-          </div>
-          <span className="text-blue-300 font-medium">SELAMAT DATANG</span>
+          <span className="text-blue-300 font-bold">SELAMAT DATANG</span>
         </div>
         
         <h1 className="text-5xl md:text-6xl font-bold mb-4">
@@ -60,7 +57,7 @@ export default function HeroSection() {
           Temukan pesona alam yang memukau, budaya yang kaya, dan produk lokal berkualitas dari UMKM desa kami.
         </p>
 
-        <div className="flex items-center justify-center gap-4">
+        <div className="flex items-center justify-center gap-4 pb-10">
           <Link 
             href="#wisata"
             className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition flex items-center gap-2"
@@ -76,7 +73,7 @@ export default function HeroSection() {
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
+        <div className="absolute bottom 0 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
           <span className="text-sm text-slate-300">SCROLL</span>
           <ChevronDown className="w-6 h-6 animate-bounce" />
         </div>

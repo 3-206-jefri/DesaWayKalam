@@ -94,20 +94,23 @@ export default function FAQSection() {
 
         {/* Contact CTA */}
         <div className="mt-12 text-center p-8 bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-100 rounded-2xl">
-          <h3 className="text-xl font-bold text-slate-900 mb-2">
-            Masih Ada Pertanyaan?
-          </h3>
-          <p className="text-slate-600 mb-6">
-            Tim kami siap membantu Anda dengan pertanyaan atau kebutuhan khusus lainnya
-          </p>
-          <a
-            href="#contact"
-            className="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-full font-medium hover:bg-blue-700 transition-colors"
-          >
-            <HelpCircle className="w-5 h-5" />
-            Hubungi Kami
-          </a>
-        </div>
+            <h3 className="text-xl font-bold text-slate-900 mb-2">
+              Masih Ada Pertanyaan?
+            </h3>
+            <p className="text-slate-600 mb-6">
+              Tim kami siap membantu Anda dengan pertanyaan atau kebutuhan khusus lainnya
+            </p>
+            <a
+              href="https://wa.me/6282279292579?text=Halo%20saya%20ingin%20bertanya%20tentang%20desa%20wisata%20Way%20Kalam."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-full font-medium hover:bg-blue-700 transition-colors"
+            >
+              <HelpCircle className="w-5 h-5" />
+              Hubungi Kami
+            </a>
+          </div>
+
       </div>
     </section>
   )

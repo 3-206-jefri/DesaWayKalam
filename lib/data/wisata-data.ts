@@ -53,9 +53,9 @@ export const wisataData: Record<string, WisataData> = {
   "Air Terjun Way Kalam menghadirkan perpaduan petualangan alam, relaksasi, dan eksplorasi budaya dalam satu destinasi wisata yang alami dan autentik."
 ],
     gallery: [
-      { src: "/Background/Galeri-Air-Terjun-3.jpg", alt: "Air Terjun Way Kalam" },
-      { src: "/Background/Galeri-Air-Terjun-5.jpg", alt: "Pemandangan Sekitar" },
-      { src: "/Background/IMG_1620.jpg", alt: "Air Terjun Anakan" }
+      { src: "/Background/Galeri_Arter1.jpg", alt: "Air Terjun Way Kalam" },
+      { src: "/Background/Galeri_Arter5.jpg", alt: "Pemandangan Sekitar" },
+      { src: "/Background/Galeri_Arter2.jpg", alt: "Air Terjun Anakan" }
 
     ],
     facilities: [
@@ -103,8 +103,8 @@ export const wisataData: Record<string, WisataData> = {
       ]
     },
     location: "Way Kalam, Penengahan, Lampung Selatan, Lampung",
-    operationalHours: "Senin - Minggu: 08.00 - 17.00 WIB",
-    contact: "+62 822 7929 2579",
+    operationalHours: "Senin-Minggu : 08.00 - 17.00 WIB",
+    contact: "+62 822-7929-2579",
     ticketPrice: "Rp 7.000",
     ticketMotor : "Rp 3.000",
     ticketMobile : "Rp 15.000",
