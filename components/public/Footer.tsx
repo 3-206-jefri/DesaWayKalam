@@ -8,7 +8,6 @@ import {
   FaTiktok,
 } from "react-icons/fa"
 
-
 const relatedLinks = [
   { name: "e-Prodskel", logo: "/Prodeskel.png", href: "https://prodeskel.binapemdes.kemendagri.go.id/app_Login/" },
   { name: "SID Kemendesa", logo: "/SID.png", href: "https://sid.kemendesa.go.id/" },
@@ -37,18 +36,14 @@ const socialMedia = [
     icon: FaTiktok,
     hover: "hover:text-black",
   },
-
 ]
-
 
 export default function Footer() {
   return (
     <footer className="bg-blue-700 text-white">
-
-
       <div className="max-w-7xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-3 gap-10">
-
-
+        
+        {/* LINK TERKAIT */}
         <div>
           <h3 className="font-semibold mb-4 border-b border-white/40 pb-2">
             Link Terkait
@@ -56,26 +51,25 @@ export default function Footer() {
           <div className="grid grid-cols-2 gap-4">
             {relatedLinks.map((item, i) => (
               <Link
-                  key={i}
-                  href={item.href}
-                  className="bg-white text-blue-700 rounded-lg p-4 flex flex-col items-center hover:shadow-md transition"
-                >
-                  {/* LOGO WRAPPER */}
-                  <div className="w-16 h-16 flex items-center justify-center">
-                    <Image
-                      src={item.logo}
-                      alt={item.name}
-                      width={64}
-                      height={64}
-                      className="object-contain max-w-full max-h-full"
-                    />
-                  </div>
+                key={i}
+                href={item.href}
+                className="bg-white text-blue-700 rounded-lg p-4 flex flex-col items-center hover:shadow-md transition"
+              >
+                {/* LOGO WRAPPER */}
+                <div className="w-16 h-16 flex items-center justify-center">
+                  <Image
+                    src={item.logo}
+                    alt={item.name}
+                    width={64}
+                    height={64}
+                    className="object-contain max-w-full max-h-full"
+                  />
+                </div>
 
-                  <span className="text-xs mt-3 text-center font-medium">
-                    {item.name}
-                  </span>
+                <span className="text-xs mt-3 text-center font-medium">
+                  {item.name}
+                </span>
               </Link>
-
             ))}
           </div>
         </div>
@@ -112,23 +106,22 @@ export default function Footer() {
             </li>
           </ul>
 
-            <div className="flex gap-3 mt-4">
-              {socialMedia.map((item, i) => {
-                const Icon = item.icon
-                return (
-                  <a
-                    key={i}
-                    href={item.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`p-2 bg-white/20 rounded-md hover:bg-white ${item.hover} transition`}
-                  >
-                    <Icon size={18} />
-                  </a>
-                )
-              })}
-            </div>
-
+          <div className="flex gap-3 mt-4">
+            {socialMedia.map((item, i) => {
+              const Icon = item.icon
+              return (
+                <a
+                  key={i}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`p-2 bg-white/20 rounded-md hover:bg-white ${item.hover} transition`}
+                >
+                  <Icon size={18} />
+                </a>
+              )
+            })}
+          </div>
         </div>
 
         {/* LOKASI BALAI DESA */}
@@ -148,7 +141,7 @@ export default function Footer() {
 
       </div>
 
-      {/* ===== FOOTER BAWAH ===== */}
+      {/* ===== FOOTER BAWAH (COPYRIGHT) ===== */}
       <div className="border-t border-white/30 py-6 text-center px-4 text-sm">
         <p className="font-medium">
           Portal Resmi Sistem Informasi Pemerintahan Desa
@@ -156,11 +149,35 @@ export default function Footer() {
         <p className="opacity-90">
           Desa Way Kalam, Kecamatan Penengahan, Kabupaten Lampung Selatan
         </p>
-
         
-        <p className="mt-4 opacity-70">
-          © 2026 • Dikembangkan oleh Tim KKN
-        </p>
+        {/* BAGIAN DEVELOPER YANG DIUBAH */}
+        <div className="mt-4 opacity-70 flex flex-col items-center gap-1">
+          <span>© 2026 • Dikembangkan oleh:</span>
+          
+          <div className="flex flex-wrap justify-center gap-x-2">
+            {/* ORANG PERTAMA */}
+            <a 
+              href="https://www.instagram.com/jefrisembiring5/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover:text-yellow-300 transition-colors font-semibold"
+            >
+              Jefri Wahyu Fernando Sembiring
+            </a>
+            
+            <span>&</span>
+
+            {/* ORANG KEDUA */}
+            <a 
+              href="https://www.instagram.com/andryanolimbong/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover:text-yellow-300 transition-colors font-semibold"
+            >
+              Andryano Shevchenko Limbong
+            </a>
+          </div>
+        </div>
       </div>
     </footer>
   )
