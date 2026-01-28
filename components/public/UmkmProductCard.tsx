@@ -6,19 +6,22 @@ import { Image as ImageIcon, MessageCircle } from 'lucide-react'
 import { StarRating } from '@/components/umkm'
 import { resolveUmkmImageUrl } from '@/lib/supabase/storage'
 
+// Pastikan interface ini sesuai dengan kolom di Database Supabase Anda
 interface UmkmProduct {
   id: string
   name: string
   description: string | null
   price: number
   category: string
-  whatsapp: string
+  whatsapp: string  // Pastikan ini 'whatsapp' (bukan whatsappNumber) jika di DB namanya 'whatsapp'
   rating: number
   photo_url: string | null
   is_active: boolean
 }
 
 export default function ProductCard({ product }: { product: UmkmProduct }) {
+  
+  // Format Harga (Rupiah)
   const formatPrice = (price: number) => {
     return new Intl.NumberFormat('id-ID', {
       style: 'currency',
@@ -27,12 +30,35 @@ export default function ProductCard({ product }: { product: UmkmProduct }) {
     }).format(price)
   }
 
+  // Handle WhatsApp Click (LOGIKA ANTI-GAGAL)
   const handleWhatsAppClick = () => {
-    const cleanNumber = product.whatsapp.replace(/\D/g, '')
+    // 1. Ambil nomor dari Props Product (PENTING: pakai product.whatsapp)
+    const rawNumber = product.whatsapp || ''; 
+
+    // 2. Bersihkan karakter selain angka
+    let cleanNumber = rawNumber.replace(/\D/g, '')
+
+    console.log('Original:', rawNumber)
+    console.log('Cleaned:', cleanNumber)
+
+    // 3. Logika ubah 08 -> 628
+    if (cleanNumber.startsWith('0')) {
+      // Hapus 0 di depan, tambah 62
+      cleanNumber = '62' + cleanNumber.slice(1)
+    } 
+    else if (cleanNumber.startsWith('8')) {
+      // Jika langsung 8 (misal 812...), tambah 62
+      cleanNumber = '62' + cleanNumber
+    }
+    // Jika sudah 62, biarkan.
+
+    console.log('Final Link:', cleanNumber)
+
     const message = encodeURIComponent(`Halo, saya tertarik dengan produk ${product.name}`)
     window.open(`https://wa.me/${cleanNumber}?text=${message}`, '_blank')
   }
 
+  // Resolve Image URL
   const normalizedImage = resolveUmkmImageUrl(product.photo_url) || ''
   const isValidImageSrc = !!normalizedImage
 
@@ -46,7 +72,7 @@ export default function ProductCard({ product }: { product: UmkmProduct }) {
             alt={product.name}
             fill
             className="object-cover group-hover:scale-105 transition-transform duration-300"
-            unoptimized
+            unoptimized // Wajib ada agar gambar muncul di Localhost
           />
         ) : (
           <div className="absolute inset-0 flex items-center justify-center text-slate-400">

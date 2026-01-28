@@ -76,6 +76,7 @@ export default function ProductDetailHero({
                   alt={name}
                   fill
                   className="object-cover"
+                  unoptimized
                   onError={() => {
                     if (imgSrc !== fallbackImage) setImgSrc(fallbackImage)
                   }}

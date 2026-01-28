@@ -18,9 +18,21 @@ export default function ProductInfo({
   variant = 'page'
 }: ProductInfoProps) {
   const handleWhatsAppClick = () => {
-    const message = encodeURIComponent("Halo, saya ingin bertanya tentang produk ini")
-    window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank')
+  // Jangan langsung hapus 0, simpan dulu untuk pengecekan
+  let cleanNumber = whatsappNumber.replace(/\D/g, '');
+
+  // Jika diawali 0, ganti dengan 62
+  if (cleanNumber.startsWith('0')) {
+    cleanNumber = '62' + cleanNumber.substring(1);
+  } 
+  // Jika belum ada kode negara, tambahkan 62
+  else if (!cleanNumber.startsWith('62')) {
+    cleanNumber = '62' + cleanNumber;
   }
+
+  const message = encodeURIComponent("Halo, saya ingin bertanya tentang produk ini");
+  window.open(`https://wa.me/${cleanNumber}?text=${message}`, '_blank');
+};
 
   const handleShare = () => {
     if (navigator.share) {
