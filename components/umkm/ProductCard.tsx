@@ -77,7 +77,7 @@ export default function ProductCard({
       <div className="p-4">
         <StarRating rating={rating} size="sm" showValue={false} showCount={false} />
         
-        <h3 className="font-bold text-slate-900 mt-2 mb-1 line-clamp-1">{name}</h3>
+        <h3 className="font-bold text-slate-900 mt-2 mb-1">{name}</h3>
         <p className="text-sm text-slate-600 mb-3 line-clamp-2">{description}</p>
         
         <p className="text-xl font-bold text-blue-600 mb-4">{price}</p>
