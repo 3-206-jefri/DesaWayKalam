@@ -24,6 +24,8 @@ export default function ProductCard({
   rating,
   whatsappNumber
 }: ProductCardProps) {
+  
+  // Validasi Gambar
   const normalizedImage = image?.trim()
   const isValidImageSrc =
     !!normalizedImage &&
@@ -33,18 +35,37 @@ export default function ProductCard({
       normalizedImage.startsWith("data:image/")) &&
     !normalizedImage.startsWith("blob:")
 
+  // === PERBAIKAN TOMBOL WHATSAPP ===
   const handleWhatsAppClick = (e: React.MouseEvent) => {
     e.preventDefault()
+    
+    // 1. Bersihkan karakter selain angka
+    let cleanNumber = whatsappNumber.replace(/\D/g, '')
+
+    // 2. Logika ubah 08 -> 628
+    if (cleanNumber.startsWith('0')) {
+      cleanNumber = '62' + cleanNumber.substring(1)
+    } else if (cleanNumber.startsWith('8')) {
+      cleanNumber = '62' + cleanNumber
+    }
+
     const message = encodeURIComponent(`Halo, saya tertarik dengan produk ${name}`)
-    window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank')
+    window.open(`https://wa.me/${cleanNumber}?text=${message}`, '_blank')
   }
+  // =================================
 
   return (
     <div className="bg-white rounded-xl overflow-hidden border border-slate-200 hover:shadow-lg transition-shadow">
       {/* Product Image */}
       <div className="relative h-64 bg-slate-100">
         {isValidImageSrc ? (
-          <Image src={normalizedImage} alt={name} fill className="object-cover" unoptimized />
+          <Image 
+            src={normalizedImage} 
+            alt={name} 
+            fill 
+            className="object-cover"
+            unoptimized // Wajib untuk localhost
+          />
         ) : (
           <div className="absolute inset-0 flex items-center justify-center text-slate-400">
             <ImageIcon className="w-10 h-10" />
