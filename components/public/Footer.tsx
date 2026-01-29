@@ -143,13 +143,6 @@ export default function Footer() {
 
       {/* ===== FOOTER BAWAH (COPYRIGHT) ===== */}
       <div className="border-t border-white/30 py-6 text-center px-4 text-sm">
-        <p className="font-medium">
-          Portal Resmi Sistem Informasi Pemerintahan Desa
-        </p>
-        <p className="opacity-90">
-          Desa Way Kalam, Kecamatan Penengahan, Kabupaten Lampung Selatan
-        </p>
-        
         {/* BAGIAN DEVELOPER YANG DIUBAH */}
         <div className="mt-4 opacity-70 flex flex-col items-center gap-1">
           <span>© 2026 • Dikembangkan oleh:</span>
@@ -174,9 +167,11 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="hover:text-yellow-300 transition-colors font-semibold"
             >
-              Andryano Shevchenko Limbong
+              Andryano Shevchenko Limbong 
             </a>
+          
           </div>
+          <span>Tim Kuliah Kerja Nyata Institut Teknologi Sumatera </span>
         </div>
       </div>
     </footer>

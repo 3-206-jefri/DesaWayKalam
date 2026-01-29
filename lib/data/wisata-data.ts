@@ -53,8 +53,8 @@ export const wisataData: Record<string, WisataData> = {
   "Air Terjun Way Kalam menghadirkan perpaduan petualangan alam, relaksasi, dan eksplorasi budaya dalam satu destinasi wisata yang alami dan autentik."
 ],
     gallery: [
-      { src: "/Background/Galeri_Arter1.jpg", alt: "Air Terjun Way Kalam" },
-      { src: "/Background/Galeri_Arter5.jpg", alt: "Pemandangan Sekitar" },
+      { src: "/Background/Galeri_Arter1.jpg", alt: "Pintu Masuk" },
+      { src: "/Background/Galeri_Arter3.jpg", alt: "Air Terjun Besar" },
       { src: "/Background/Galeri_Arter2.jpg", alt: "Air Terjun Anakan" }
 
     ],
