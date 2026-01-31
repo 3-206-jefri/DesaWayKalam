@@ -1,6 +1,7 @@
 import { createClient } from '@/lib/supabase/server'
 import { redirect } from 'next/navigation'
 import Sidebar from '@/components/admin/sidebar'
+import AutoLogout from '@/components/admin/auto-logout' // <-- Import komponen baru
 
 export default async function AdminLayout({
   children,
@@ -16,6 +17,9 @@ export default async function AdminLayout({
 
   return (
     <div className="min-h-screen bg-slate-50">
+      {/* Pasang AutoLogout di sini agar aktif di semua halaman admin */}
+      <AutoLogout /> 
+
       {/* Sidebar */}
       <Sidebar userEmail={user.email} />
 
