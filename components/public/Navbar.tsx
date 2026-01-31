@@ -39,11 +39,10 @@ export default function Navbar() {
             <Link href="/umkm" className={linkClass("/umkm")}>UMKM</Link>
             <Link href="/tim-kkn" className={linkClass("/tim-kkn")}>Tim KKN</Link>
             <Link
-              href="https://waykalam-lamsel.desa.id/"
-              target="_blank"
+              href="/login"
               className="px-6 py-2 bg-blue-600 text-white rounded-lg"
             >
-              SIPDesKel
+              Masuk
             </Link>
           </div>
 
